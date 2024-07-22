@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Felix</title>
+    <title>William</title>
     <link rel="icon" href="https://raw.githubusercontent.com/thedev-me/register/main/media/icon.ico" type="image/x-icon">
     <link rel="icon" href="https://raw.githubusercontent.com/thedev-me/register/main/media/icon.png" type="image/png">
     <style>
@@ -150,19 +150,18 @@
         </main>
         <footer>
             <div class="icon-container">
-                <div class="github-link">
-                    <a href="https://github.com/thedev-me" target="GitHub">
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
-                    </a>
-                </div>
                 <div class="email-link">
-                    <a href="mailto:contact@thedev.me" target="email">
+                    <a href="mailto:demo3546.us@gmail.com" target="email">
                         <img src="https://img.icons8.com/?size=100&id=A8RY0MjQ0VV3&format=png&color=FFFFFF" alt="Email Icon">
                     </a>
                 </div>
             </div>
-            <p>&copy; 2024 thedev.me ● By: <a href="https://github.com/yazeedt">YazeedT</a></p>
+            <p>&copy; <span id="currentYear"></span> thedev.me ● By: <a href="https://github.com/willi-felix">William</a></p>
         </footer>
     </div>
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
 </body>
 </html>
