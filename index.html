@@ -1,8 +1,169 @@
-<html>
-  <head>
-    <title>Hello World</title>
-  </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thedev.me - Free Subdomains</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/thedev-me/register/main/media/icon.ico" type="image/x-icon">
+    <link rel="icon" href="https://raw.githubusercontent.com/thedev-me/register/main/media/icon.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #383e47;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 90vh;
+            width: 100%;
+            max-width: 800px;
+            margin: 10vh auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        header {
+            width: 100%;
+            background-color: #383e47;
+            border-bottom: 2px solid #f66095;
+            padding-bottom: 20px;
+        }
+        
+        header img {
+            width: 50%;
+            height: auto;
+            max-width: 100%;
+        }
+        
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0.5em 0;
+        }
+        
+        a {
+            color: #f66095;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            opacity: 0.8;
+        }
+        
+        .github-link, .email-link {
+            margin-top: 20px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .title {
+            font-size: 2em;
+            transition: color 0.5s;
+            color: #f66095
+        }
+
+        .title:hover {
+            color: #ffffff;
+        }
+
+        .github-link img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            background-color: #383e47;
+            border-radius: 50%;
+        }
+        
+        .email-link img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            background-color: #383e47;
+        }
+        
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        footer .icon-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        footer p {
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            header img {
+                width: 70%;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://raw.githubusercontent.com/thedev-me/register/main/media/header2.png" alt="thedev.me header">
+        </header>
+        <main>
+            <p class="title">Free subdomains for developers</p>
+            <br>
+            <p>Get your FREE <strong>{name}.thedev.me</strong> subdomain</p>
+            <p>To register your subdomain, visit our <a href="https://github.com/thedev-me/register">GitHub repository</a></p>
+        </main>
+        <footer>
+            <div class="icon-container">
+                <div class="github-link">
+                    <a href="https://github.com/thedev-me" target="GitHub">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+                    </a>
+                </div>
+                <div class="email-link">
+                    <a href="mailto:contact@thedev.me" target="email">
+                        <img src="https://img.icons8.com/?size=100&id=A8RY0MjQ0VV3&format=png&color=FFFFFF" alt="Email Icon">
+                    </a>
+                </div>
+            </div>
+            <p>&copy; 2024 thedev.me ● By: <a href="https://github.com/yazeedt">YazeedT</a></p>
+        </footer>
+    </div>
+</body>
 </html>
