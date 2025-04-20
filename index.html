@@ -3,169 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William</title>
-    <link rel="icon" href="https://img.icons8.com/?size=100&id=0KLeTkP5UwuU&format=png&color=000000">
+    <title>William Felix - Python Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Saira:ital,wght@0,500;1,500&display=swap');
-
-        html, body {
-            height: 25%;
-            margin: 0;
-            padding: 0;
-        }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
         body {
-            background-color: #383e47;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; 
         }
-        
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 90vh;
-            width: 100%;
-            max-width: 800px;
-            margin: 10vh auto;
-            padding: 20px;
-            box-sizing: border-box;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        header {
-            width: 100%;
-            background-color: #383e47;
-            border-bottom: 2px solid #60f6b5;
-            padding-bottom: 20px;
-        }
-        
-        header img {
-            width: 40%;
-            height: auto;
-            border-radius:120%;
-        }
-        
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-        }
-        
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin: 0.5em 0;
-        }
-        
-        a {
-            color: #60f6b5;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        a:hover {
-            opacity: 0.8;
-        }
-        
-        .github-link, .email-link {
-            margin-top: 20px;
-            display: inline-block;
-            margin-right: 10px;
-        }
-        
-        .title {
-            font-size: 2em;
-            transition: color 0.5s;
-            color: #60f6b5;
-        }
-
-        .title:hover {
-            color: #ffffff;
-        }
-
-        .github-link img {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-            background-color: #383e47;
-            border-radius: 50%;
-        }
-        
-        .email-link img {
-            width: 40px;
-            height: 40px;
-            vertical-align: middle;
-            background-color: #383e47;
-        }
-        
-        footer {
-            margin-top: auto;
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        footer p {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        
-        footer .icon-container {
-            display: flex;
-            margin-bottom: 10px;
-        }
-        
-        footer p {
-            margin-top: 10px;
-        }
-        
-        @media (max-width: 600px) {
-            header img {
-                width: 70%;
-            }
-            p {
-                font-size: 1em;
-            }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <img src="./img/a-avatar (2).jpg" alt="Avatar">
-        </header>
-        <main>
-            <p class="title">William Felix</p>
-            <p>I am a young developer.</p>
-            <p>I have 3 years of experience in Python, C# and PHP</p>
-        </main>
-        <footer>
-            <div class="icon-container">
-                <div class="email-link">
-                    <a href="mailto:demo3546.us@gmail.com" target="email">
-                        <img src="https://img.icons8.com/?size=100&id=pJJmXPomYuPv&format=png&color=FFFFFF" alt="Email Icon">
-                    </a>
+<body class="bg-gray-100 text-gray-900 antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition duration-300">William Felix</a>
+
+            <div class="hidden md:flex space-x-4 md:space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-600 focus:outline-none">
+                 
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition duration-300">About</a>
+            <a href="#skills" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition duration-300">Skills</a>
+            <a href="#projects" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition duration-300">Projects</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="bg-gradient-to-br from-blue-500 to-indigo-700 text-white py-20 md:py-32 px-6 text-center">
+        <div class="container mx-auto">
+            <img src="https://i.ibb.co/kgJfS4SL/William-Felix.png" alt="William Felix" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Hi, I'm William Felix</h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-8">Junior Python Developer<br>Flask Enthusiast</p>
+            <a href="#projects" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-100 hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out">
+                View My Work
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">About Me</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                I am a motivated junior developer with a strong passion for backend development using Python and the Flask framework.
+                I focus on writing clean, efficient, and maintainable code to build scalable web applications.
+                Always eager to tackle new challenges, learn cutting-edge technologies, and collaborate on exciting projects.
+            </p>
+            <div id="more-about-placeholder" class="border-t border-gray-200 pt-8 mt-8">
+                <button
+                    hx-get="more-about-content.html"
+                    hx-target="#more-about-placeholder"
+                    hx-swap="outerHTML"
+                    class="bg-blue-600 text-white py-2 px-5 rounded-lg hover:bg-blue-700 transition duration-300 shadow hover:shadow-md">
+                    Tell Me More (HTMX Demo)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Technical Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" class="h-16 mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Python</h3>
                 </div>
-                <div class="github-link">
-                    <a href="https://facebook.com/taucoe0">
-                        <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=FFFFFF" alt="Email Icon">
-                    </a>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://i.ibb.co/yDJdvvr/flask-256x229.png" alt="Flask" class="h-16 mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Flask</h3>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML5" class="h-16 mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">HTML5</h3>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://i.ibb.co/5g9jrhJR/CSS3-logo-svg.png" alt="CSS3" class="h-16 mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">CSS3</h3>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" class="h-16 mb-4 p-1">
+                    <h3 class="text-xl font-semibold text-gray-700">Tailwind CSS</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://htmx.org/img/htmx_logo.2.png" alt="HTMX" class="h-16 mb-4 object-contain">
+                    <h3 class="text-xl font-semibold text-gray-700">HTMX</h3>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" class="h-16 mb-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Git & GitHub</h3>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1 flex flex-col items-center">
+                     <svg class="h-16 mb-4 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                     </svg>
+                    <h3 class="text-xl font-semibold text-gray-700">Databases (SQL)</h3> </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/400x250/ddeeff/5577aa?text=Project+Alpha" alt="Project Alpha Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Project Alpha</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            A web application built with Flask and SQLAlchemy for [briefly describe purpose]. Features include [mention 1-2 key features].
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SQLAlchemy</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                        </div>
+                         <div class="mt-auto flex space-x-4">
+                             <a href="#" class="text-blue-600 hover:text-blue-800 hover:underline font-medium transition duration-300">Live Demo</a>
+                             <a href="#" class="text-gray-600 hover:text-gray-800 hover:underline font-medium transition duration-300">GitHub</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/400x250/eefdde/77aa55?text=Project+Beta" alt="Project Beta Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Project Beta API</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Developed a RESTful API using Flask-RESTful to serve data for [purpose]. Included authentication and data validation.
+                        </p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">REST API</span>
+                        </div>
+                         <div class="mt-auto flex space-x-4">
+                             <a href="#" class="text-gray-600 hover:text-gray-800 hover:underline font-medium transition duration-300">GitHub</a>
+                         </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/400x250/feedde/aa7755?text=Project+Gamma" alt="Project Gamma Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Project Gamma</h3>
+                        <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                            Currently developing [describe project]. Exploring the use of HTMX for dynamic front-end updates with Flask.
+                        </p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">HTMX</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                         </div>
+                         <div class="mt-auto flex space-x-4">
+                             <a href="#" class="text-gray-600 hover:text-gray-800 hover:underline font-medium transition duration-300">GitHub (In Progress)</a>
+                         </div>
+                    </div>
                 </div>
             </div>
-            <p>&copy; <span id="currentYear"></span> wfh.thedev.me | By <a href="https://github.com/willi-felix">William</a></p>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 bg-gradient-to-br from-gray-700 to-gray-900 text-white">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
+            <p class="text-lg text-gray-300 mb-10 leading-relaxed">
+                I'm actively looking for new opportunities and collaborations. If you have a project in mind, a question, or just want to connect, feel free to reach out!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="mailto:demo3546.us@gmail.com" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-5 rounded-lg transition duration-300 shadow hover:shadow-md">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Email Me
+                </a>
+                <a href="https://github.com/willi-felix" target="_blank" rel="noopener noreferrer" class="flex items-center bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-5 rounded-lg transition duration-300 shadow hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor"> <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+        <div class="container mx-auto">
+            <p>&copy; <span id="current-year"></span> William Felix. All rights reserved.</p>
+            <p class="text-xs mt-1">Built with Tailwind CSS & HTMX</p>
+        </div>
+    </footer>
+
     <script>
-        const currentYear = new Date().getFullYear();
-        document.getElementById("currentYear").textContent = currentYear;
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>
